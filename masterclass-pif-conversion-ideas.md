@@ -24,6 +24,15 @@ The 1:1 call is still an asset even when it doesn't close. Applies to three case
 - **General principle:** every non-converting call is either content (clips, quotes, objection language) or a nurture-list entry with a reason-coded follow-up (broke / with-competitor / spousal-approval) — none of them should just go cold.
 - **No-shows / attended masterclass but never booked:** need a nurture sequence, not a one-shot pitch — recording + mini-training + downsell offer to stay warm for the next cohort/launch instead of disappearing.
 
+## 2026-09-12 (c) — reposition the target buyer: "resourced women who don't know it" ⚑ important, tell Gia directly
+
+Gia's read on her own funnel is that it's for people who come in at $49 and end up paying $30K — but the pattern underneath that may be about resource, not spend size. Mary Julia's own conversion is the proof case:
+
+- She's a resourced woman — husband, home, retirement account, business experience — and didn't identify as one going in.
+- She only converted because she understood exactly what to do (and not do) with her retirement account. She would never have touched it if it were all she had — the conversion depended on already having enough of a financial base to make a calculated move, not on being in a corner.
+- **Implication for Gia's marketing:** the ideal buyer isn't "someone willing to stretch" — it's a woman who is already resourced (spouse, home, retirement, business background) but doesn't see herself that way yet. Marketing/messaging should help her recognize her own resourcedness rather than pitching to urgency or stretch-to-afford framing.
+- **Action:** raise this directly with Gia — it may reshape who the masterclass ads target and how the offer is framed (naming the buyer's existing assets/position back to her, not just her ambition).
+
 ## Open questions / not yet decided
 - Which of these to test first — no priority set yet.
 - Whether the filter-session model requires a new hire/contractor or Mary Julia runs it short-term.
