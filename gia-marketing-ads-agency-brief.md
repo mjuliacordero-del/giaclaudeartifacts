@@ -1,10 +1,10 @@
 # Gia — Marketing & Ads Agency Brief
 
-*Working draft, exported from the live doc on 2026-09-24. Not yet Gia-confirmed.*
+*Working draft, exported from the live doc, updated 2026-09-25. Not yet Gia-confirmed.*
 
 ## 1. The events being promoted
 
-5 live masterclasses, one per Mastery, run roughly every other week across a 10-week window, in framework order:
+5 live masterclasses, one per Mastery, run one per week across 5 weeks, in framework order:
 
 | # | Pillar | Working title |
 |---|---|---|
@@ -38,7 +38,7 @@
 
 **Primary objective:** registrations per masterclass → live attendance → course enrollment by series close.
 
-**Target metric:** cost per registration per session, plus a single blended CPA to a sale across the full 10-week window
+**Target metric:** cost per registration per session, plus a single blended CPA to a sale across the full 5-week window
 
 **Budget & flight:** Proposal: test spend on masterclass 1 (Iconic Faith) only, confirm CPA, then scale into 2–5.
 
@@ -70,11 +70,11 @@
 
 ## 8. Reporting & sync
 
-Weekly, tied to the 10-week flight — report registrations and CPA per session, so an underperforming pillar can be recut before the next one airs.
+Weekly, tied to the 5-week flight — report registrations and CPA per session, so an underperforming pillar can be recut before the next one airs.
 
 ## Open questions for Gia
 
-- [ ] Confirm the 10-week cadence and start date — pick 5 dates before the agency builds anything
+- [ ] Confirm the 5-week cadence and start date — pick 5 dates before the agency builds anything
 - [ ] Confirm the self-paced course is truly ready to sell at series close, or needs its build finished first
 - [ ] Confirm the order-bump / upsell shape (§3)
 - [ ] Confirm budget and success bar per session (§4) — set before flight 1, not after
