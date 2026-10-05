@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gia Smart Media Kit</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap">
+<style>
+  :root {
+    --ivory: #F0F0ED;
+    --cream: #F5F5F2;
+    --linen: #EDE9E6;
+    --espresso: #322B19;
+    --bark: #3F3026;
+    --gold: #7F7013;
+    --champagne: #A89D60;
+    --mist: #C7D1D2;
+    --ink-black: #2B2B2B;
+    --text-muted: rgba(50, 43, 25, 0.72);
+    --rule: rgba(50, 43, 25, 0.14);
+    --rule-strong: rgba(50, 43, 25, 0.22);
+    --font-display: "Poppins", "Helvetica Neue", Arial, sans-serif;
+    --font-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+    --font-ornament: "EB Garamond", Georgia, serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ivory: #1C1A16; --cream: #222019; --linen: #2A2720;
+      --espresso: #F0F0ED; --bark: #E8E4DB; --gold: #C4B44A;
+      --champagne: #D4C87A; --mist: #3A4344; --ink-black: #F0F0ED;
+      --text-muted: rgba(240, 240, 237, 0.72);
+      --rule: rgba(240, 240, 237, 0.14);
+      --rule-strong: rgba(240, 240, 237, 0.22);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ivory: #1C1A16; --cream: #222019; --linen: #2A2720;
+    --espresso: #F0F0ED; --bark: #E8E4DB; --gold: #C4B44A;
+    --champagne: #D4C87A; --mist: #3A4344; --ink-black: #F0F0ED;
+    --text-muted: rgba(240, 240, 237, 0.72);
+    --rule: rgba(240, 240, 237, 0.14);
+    --rule-strong: rgba(240, 240, 237, 0.22);
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--ivory);
+    color: var(--espresso);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.72;
+    padding: 0 16px;
+    margin: 0;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 0;
+  }
+  .page + .page { border-top: 1px solid var(--rule-strong); }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+  .ssp-mark {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: right;
+    line-height: 1.4;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .cover-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  @media (max-width: 700px) { .cover-layout { grid-template-columns: 1fr; gap: 32px; } }
+
+  .name-block h1 {
+    font-family: var(--font-ornament);
+    font-weight: 500;
+    font-style: normal;
+    font-size: clamp(48px, 8vw, 72px);
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+    color: var(--espresso);
+  }
+  .title-line {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 4px;
+    line-height: 1.5;
+  }
+  .title-line-sub {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 4px;
+    line-height: 1.5;
+  }
+  .gold-rule {
+    width: 100%;
+    height: 2px;
+    background: var(--champagne);
+    margin: 24px 0;
+    border: none;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 40px;
+    margin-bottom: 32px;
+  }
+  @media (max-width: 500px) { .stats-grid { grid-template-columns: 1fr; gap: 24px; } }
+
+  .eyebrow {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 12px;
+  }
+  .stat-number {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(32px, 5vw, 42px);
+    line-height: 1.1;
+    color: var(--champagne);
+    margin: 0 0 2px;
+  }
+  .stat-label {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.4;
+  }
+  .stat-text {
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--espresso);
+    margin: 4px 0;
+    line-height: 1.5;
+  }
+  .stat-text strong { font-weight: 700; color: var(--gold); }
+
+  .recognition-list {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+  }
+  .recognition-list li {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .recognition-list li em {
+    font-family: var(--font-ornament);
+    font-style: italic;
+    color: var(--espresso);
+    font-size: 15px;
+  }
+
+  .prepared-for {
+    background: var(--cream);
+    padding: 24px 28px;
+    margin-top: 32px;
+  }
+  .prepared-for .eyebrow { margin-bottom: 8px; }
+  .prepared-for .host-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 0 2px;
+    color: var(--espresso);
+  }
+  .prepared-for .show-name {
+    font-family: var(--font-ornament);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .featured-link {
+    margin-top: 20px;
+    padding: 16px 20px;
+    border-left: 2px solid var(--champagne);
+    background: var(--linen);
+  }
+  .featured-link .eyebrow { margin-bottom: 4px; }
+  .featured-link a {
+    font-size: 13px;
+    color: var(--gold);
+    word-break: break-all;
+    text-decoration: none;
+  }
+  .featured-link a:hover { text-decoration: underline; }
+
+  .portrait-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .portrait-main {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--linen);
+    overflow: hidden;
+  }
+  .portrait-main img { width: 100%; height: 100%; object-fit: cover; }
+  .portrait-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .portrait-thumb {
+    aspect-ratio: 3/4;
+    background: var(--linen);
+    overflow: hidden;
+  }
+  .portrait-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .portrait-caption {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-align: right;
+    margin-top: -4px;
+  }
+
+  .p2-hero { margin-bottom: 40px; }
+  .p2-hero h2 {
+    font-family: var(--font-ornament);
+    font-weight: 500;
+    font-style: normal;
+    font-size: clamp(36px, 6vw, 54px);
+    line-height: 1.06;
+    color: var(--espresso);
+    margin: 0 0 8px;
+  }
+  .p2-subtitle {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    margin: 0;
+  }
+
+  .interview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  @media (max-width: 700px) { .interview-grid { grid-template-columns: 1fr; } }
+
+  .card { padding: 28px; }
+  .card-dark { background: var(--espresso); color: var(--ivory); }
+  .card-dark .eyebrow { color: var(--champagne); }
+  .card-dark p, .card-dark li { color: rgba(240, 240, 237, 0.85); }
+  .card-warm { background: var(--linen); }
+  .card-cream { background: var(--cream); }
+  .card h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 16px;
+  }
+  .card-dark h3 { color: var(--champagne); }
+  .card p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 12px;
+    color: var(--text-muted);
+  }
+  .card p:last-child { margin-bottom: 0; }
+
+  .story-arc {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .story-arc li {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--espresso);
+    padding-left: 16px;
+    position: relative;
+  }
+  .card-dark .story-arc li { color: rgba(240, 240, 237, 0.85); }
+  .story-arc li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+    background: var(--champagne);
+  }
+
+  .questions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .questions-list li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .questions-list li:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  @media (max-width: 700px) { .bottom-grid { grid-template-columns: 1fr; } }
+  .bottom-grid h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 12px;
+  }
+  .bottom-grid p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0 0 8px;
+  }
+  .bottom-grid p:last-child { margin-bottom: 0; }
+  .takeaway-quote {
+    font-family: var(--font-ornament);
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--espresso);
+    margin: 0 0 12px;
+  }
+  .resource-note {
+    display: inline-block;
+    background: var(--linen);
+    padding: 8px 12px;
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 500;
+    margin-top: 8px;
+  }
+
+  .connect-footer {
+    border-top: 2px solid var(--champagne);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .connect-footer .handle {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    color: var(--espresso);
+  }
+  .connect-footer .email-text {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER -->
+<div class="page">
+  <div class="page-header">
+    <div></div>
+    <div class="ssp-mark">She Sells<br>Premium™</div>
+  </div>
+
+  <div class="cover-layout">
+    <div class="info-column">
+      <div class="name-block">
+        <h1>Gia Smart</h1>
+        <p class="title-line">Luxury Business Consultant &amp; Premium Brand Architect</p>
+        <p class="title-line-sub">Founder &amp; CEO, Luxury Smart Consulting, Inc.</p>
+        <p class="title-line-sub">and She Sells Premium™</p>
+      </div>
+
+      <hr class="gold-rule">
+
+      <div class="stats-grid">
+        <div class="stat-group">
+          <p class="eyebrow">By the Numbers</p>
+          <p class="stat-number">$100M+</p>
+          <p class="stat-label">collective sales contribution</p>
+        </div>
+        <div class="stat-group">
+          <p class="eyebrow">Recognition</p>
+          <p class="stat-text">Two-time U.S. award recipient for Best Luxury Business Consultant in the U.S.</p>
+          <p class="stat-text"><strong>2025 and 2026.</strong></p>
+        </div>
+        <div class="stat-group">
+          <p class="stat-number">$26M+</p>
+          <p class="stat-label">personal sales</p>
+        </div>
+        <div class="stat-group">
+          <ul class="recognition-list">
+            <li>Featured in</li>
+            <li><em>Women's Insider Magazine</em></li>
+            <li><em>Modern Luxury Magazine</em></li>
+            <li>ICONS Issue. Nov. 2026</li>
+          </ul>
+        </div>
+        <div class="stat-group">
+          <p class="stat-number">15+</p>
+          <p class="stat-label">years in luxury sales and leadership</p>
+        </div>
+        <div class="stat-group" style="display:flex;flex-direction:column;justify-content:flex-end;">
+          <p class="stat-text" style="font-size:14px;">Seven-Figure Company + Brand</p>
+          <p class="stat-label">Luxury Smart Consulting firm build in 7 months</p>
+        </div>
+      </div>
+
+      <div class="prepared-for">
+        <p class="eyebrow">Prepared For</p>
+        <p class="host-name">Alexis Andra</p>
+        <p class="show-name">Shift Happens: From Pain to Purpose</p>
+      </div>
+
+      <div class="featured-link">
+        <p class="eyebrow">Featured Profile</p>
+        <a href="https://womensinsider.com/business/gia-smart-leading-the-luxury-business-consulting-world-and-transforming-female-entrepreneurs-into-icons/">womensinsider.com/business/gia-smart-leading-the-luxury-business-consulting-world-and-transforming-female-entrepreneurs-into-icons/</a>
+      </div>
+    </div>
+
+    <div class="portrait-column">
+      <div class="portrait-main"><img src="photos/cream-hand-to-cheek.jpg" alt="Gia Smart"></div>
+      <div class="portrait-row">
+        <div class="portrait-thumb"><img src="photos/cream-laughing.jpg" alt="Gia Smart laughing"></div>
+        <div class="portrait-thumb"><img src="photos/denim-jacket-standing.jpg" alt="Gia Smart standing"></div>
+      </div>
+      <p class="portrait-caption">Alternate Portraits</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2: INTERVIEW GUIDE -->
+<div class="page">
+  <div class="page-header">
+    <div></div>
+    <div class="ssp-mark">She Sells<br>Premium™</div>
+  </div>
+
+  <div class="p2-hero">
+    <h2>The Story<br>Behind the Success</h2>
+    <p class="p2-subtitle">A Tailored Interview Guide for Gia Smart</p>
+  </div>
+
+  <div class="interview-grid">
+    <div class="card card-dark">
+      <h3>Episode Frame</h3>
+      <p>From losing the company she helped build to 8 figures and then building a seven-figure consulting firm working with 14 female founders and building an iconic personal brand, Gia Smart's story explores Iconic Faith, ambition, taking action, premium identity, and the resilience to rebuild.</p>
+    </div>
+
+    <div class="card card-warm">
+      <h3>Selected Questions</h3>
+      <ul class="questions-list">
+        <li>You were taught to dream big and also that wanting significant generational wealth was wrong. How did those messages shape your relationship with ambition?</li>
+        <li>The company you helped build was sold before you returned from maternity leave. What did that loss mean beyond the paycheck?</li>
+        <li>When doors kept closing, what helped you keep trusting God before you could see the next chapter?</li>
+        <li>What did you see women doing in sales that made you create She Sells Premium™?</li>
+        <li>What changes when a woman understands the identity and buyer experience behind a premium sale?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card card-cream" style="margin-bottom: 32px;">
+    <h3>The Arc</h3>
+    <ul class="story-arc">
+      <li>Inherited shame around wealth and ambition</li>
+      <li>Building a decade-plus luxury sales career</li>
+      <li>Company sold before maternity-leave return</li>
+      <li>Doors closed, an Iconic Faith™ rebuild</li>
+      <li>Turning luxury sales expertise into the most elite sales mastery experience for high-level female entrepreneurs — created She Sells Premium™ &amp; The 9-Figure Sales Method</li>
+    </ul>
+  </div>
+
+  <div class="bottom-grid">
+    <div>
+      <h3>Practical Takeaway</h3>
+      <p class="takeaway-quote">Deciding to go premium is one of the most powerful decisions you'll ever make despite the opposition.</p>
+      <p>Premium Positioning by giving women access to the 9-Figure Sales Method is one of my greatest honors.</p>
+      <p>Activating your success by taking ICONIC FAITH action is what will open every door you've ever prayed for or desired.</p>
+    </div>
+    <div>
+      <h3>Listener Resource</h3>
+      <p>Free Premium Sales Conversation Self-Audit — a guided checklist to support founders and high-level female entrepreneurs spot where their highest-level offers can be leaving millions on the table, and where their communication may be breaking down.</p>
+      <span class="resource-note">Add listener resource URL before sending</span>
+    </div>
+    <div>
+      <h3>Host Link</h3>
+      <p>Apple Podcasts:<br>
+        <a href="https://podcasts.apple.com/us/podcast/shift-happens-from-pain-to-purpose/id1796585590" style="color:var(--gold);font-size:13px;word-break:break-all;text-decoration:none;">podcasts.apple.com/us/podcast/shift-happens-from-pain-to-purpose/id1796585590</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="connect-footer">
+    <span class="handle">@ITSGIASMART</span>
+    <span class="email-text">ITSGIASMART@GMAIL.COM</span>
+  </div>
+</div>
+
+</body>
+</html>
