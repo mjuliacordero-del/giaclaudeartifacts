@@ -228,40 +228,103 @@
       background: #fff;
       color: #322B19;
       padding: 0;
-      font-size: 11pt;
+      font-size: 9pt;
+      line-height: 1.5;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
+
     .page {
       max-width: none;
       padding: 0;
       margin: 0;
       page-break-after: always;
       break-after: page;
+      overflow: hidden;
+      height: 9in;
+      box-sizing: border-box;
     }
     .page + .page { border-top: none; }
     .page:last-child { page-break-after: auto; break-after: auto; }
 
-    .cover-layout { gap: 32px; }
-    .name-block h1 { font-size: 48pt; }
-    .stat-number { font-size: 28pt; }
-    .p2-hero h2 { font-size: 36pt; }
+    /* Page 1: tighten everything to fit one sheet */
+    .page-header { margin-bottom: 16px; }
+    .logo-gia { height: 32px; }
+    .logo-ssp { height: 24px; }
 
-    .portrait-main { aspect-ratio: 3/4; max-height: 340px; }
-    .portrait-thumb { max-height: 140px; }
+    .cover-layout { gap: 20px; }
+    .name-block h1 { font-size: 36pt; margin-bottom: 8px; }
+    .title-line { font-size: 8pt; margin-bottom: 2px; }
+    .title-line-sub { font-size: 8pt; margin-bottom: 2px; }
+    .gold-rule { margin: 12px 0; }
+
+    .bio p { font-size: 8pt !important; line-height: 1.45 !important; }
+    .bio { margin-bottom: 16px !important; }
+
+    .stats-recognition { gap: 12px 20px; margin-bottom: 16px; }
+    .eyebrow { font-size: 7pt; margin-bottom: 6px; }
+    .stat-number { font-size: 22pt; }
+    .stat-label { font-size: 8pt; }
+    .stat-text { font-size: 8pt; }
+    .award-seal { width: 48px; height: 48px; }
+    .award-row { gap: 8px; }
+    .wi-logo { height: 20px; }
+    .featured-pubs li { font-size: 8pt; line-height: 1.4; }
+    .featured-pubs li em { font-size: 9pt; }
+
+    .mist-band { padding: 12px 16px; margin-top: 16px; }
+    .prepared-host { font-size: 13pt; }
+    .prepared-show { font-size: 11pt; }
+
+    .featured-link { margin-top: 12px; padding: 8px 12px; }
+    .featured-link a { font-size: 7pt; }
+
+    .portrait-main { max-height: 260px; }
+    .portrait-thumb { max-height: 100px; }
+    .portrait-row { gap: 8px; }
+    .portrait-column { gap: 8px; }
+    .portrait-caption { font-size: 7pt; }
     .portrait-main img, .portrait-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      width: 100%; height: 100%; object-fit: cover;
     }
+
+    /* Page 2 */
+    .p2-hero { margin-bottom: 20px; }
+    .p2-hero h2 { font-size: 28pt; }
+    .p2-subtitle { font-size: 9pt; }
+
+    .episode-summary { padding: 14px 16px; margin-bottom: 20px; }
+    .episode-summary p { font-size: 9pt; }
+
+    .interview-grid { gap: 16px; margin-bottom: 20px; break-inside: avoid; }
+    .card { padding: 16px; }
+    .card h3 { font-size: 7pt; margin-bottom: 8px; }
+    .card p { font-size: 8pt; line-height: 1.45; margin-bottom: 8px; }
+    .story-arc li { font-size: 8pt; }
+    .questions-list li { font-size: 8pt; padding-bottom: 8px; }
+
+    .assets-section { padding: 16px; margin-bottom: 20px; }
+    .assets-section h3 { font-size: 7pt; margin-bottom: 12px; }
+    .asset-item { padding: 6px 10px; break-inside: avoid; }
+    .asset-name { font-size: 8pt; }
+    .asset-detail { font-size: 7pt; }
+    .asset-thumb, .asset-thumb-photo { width: 28px; height: 28px; }
+    .dl-arrow { font-size: 10pt; }
+
+    .bottom-grid { gap: 16px; margin-bottom: 20px; }
+    .bottom-grid h3 { font-size: 7pt; }
+    .bottom-grid p { font-size: 8pt; }
+    .takeaway-quote { font-size: 11pt; }
+    .resource-note { font-size: 7pt; padding: 4px 8px; }
+
+    .connect-footer { padding-top: 12px; }
+    .connect-footer .handle { font-size: 10pt; }
+    .connect-footer .email-text { font-size: 10pt; }
 
     .mist-band, .episode-summary, .card-cream, .card-warm, .assets-section, .featured-link {
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
-
-    .asset-item { break-inside: avoid; }
-    .interview-grid { break-inside: avoid; }
 
     a { color: #7F7013; }
     a[href]::after { content: none; }
@@ -269,7 +332,7 @@
 
   @page {
     size: letter;
-    margin: 0.75in;
+    margin: 0.5in 0.6in;
   }
 </style>
 </head>
